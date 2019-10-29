@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        view contacts
+    </title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2>CONTACT DETAILS</h2>
+        <a class="nav-link btn btn-success" href="/edit/{{ contact['id'] }}">
+            Edit Contact <i class="fa fa-pencil"></i>
+        </a>
+            <!-- <button>Edit <i class="fa fa-pencil"></i></button> -->
+        <a class="nav-link btn btn-success" href="/delete/{{ contact['id'] }}">
+                Delete<i class="fa fa-trash"></i>
+        </a>
+    </nav>
+    <p>
+        <strong>Name: </strong> {{contact['fname']}} {{contact['lname']}}
+    </p>
+    <p>
+        <strong>Mobile Number: </strong>
+        <a href="mailto:{{ contact['phone'] }}">
+            {{contact['phone']}}
+        </a>
+        <br>
+        <strong>E-mail: </strong>
+        <a href="mailto:{{ contact['mail'] }}">
+            {{contact['mail']}}
+        </a>
+    </p>
+</body>
+
+</html>

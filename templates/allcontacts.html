@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="stylingicons.css"></script>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>ALL CONTACTS</title>
+</head>
+
+<body>
+
+    <nav class="navbar ">
+        <div class="container">
+            <div class="contactus">
+                <a class="navbar-brand" ><i class="fa fa-fw fa-user"></i>CONTACTS</a>
+                <a class="navbar-brand" href="http://localhost:8000/newcontact"><i class="fa fa-user-plus"></i>NEW</a>
+            </div>
+           
+            <div class="topnav-right">
+                <input type="search" placeholder="Search here">
+                <button type="button">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    {% for contact in contacts %}
+    <p>
+        <strong>Name :</strong> {{contact['fname']}}
+        {{contact['lname']}}
+    </p>
+    <!-- <p>
+        <strong>Email :</strong> {{contact['email']}}
+    </p> -->
+    <p>
+        <strong>Phone :</strong> {{contact ['phone']}}
+    </p>
+    <a href="/viewcontact/{{contact['id']}}">View</a>
+    <hr>
+    {% endfor %}
+
+</body>
+
+</html>
